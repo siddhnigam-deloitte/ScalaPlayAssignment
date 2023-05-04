@@ -1,6 +1,6 @@
 package Dao
 
-import models.{MatchData, UserData}
+import models.{MatchData}
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
 import play.api.mvc.{AbstractController, ControllerComponents}
 import slick.jdbc.{JdbcProfile, JdbcType}

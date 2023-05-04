@@ -1,6 +1,6 @@
 package modules.actor
 
-import Dao.{MatchDataDao, TeamsDao, UserDao, VenueDao}
+import Dao.{MatchDataDao, TeamsDao, VenueDao}
 import akka.actor.Actor.Receive
 import akka.actor.TypedActor.context
 import akka.actor.{Actor, ActorRef, Props, Terminated}

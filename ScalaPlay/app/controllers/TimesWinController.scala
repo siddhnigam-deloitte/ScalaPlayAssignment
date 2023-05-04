@@ -13,8 +13,7 @@ import scala.concurrent.duration.DurationInt
 import scala.language.postfixOps
 
 class TimesWinController @Inject()(val teamsWinDao: TeamsWinDao,
-                         val controllerComponents: ControllerComponents,
-                         @Named("userCountActor") userCountActor: ActorRef)
+                         val controllerComponents: ControllerComponents)
                         (implicit mat: Materializer, ec: ExecutionContext)
   extends BaseController {
 

@@ -10,7 +10,6 @@ import akka.util.ByteString
 import com.google.inject.AbstractModule
 import com.typesafe.config.Config
 import modules.actor.ReaderActor
-import modules.actor.UserCountActor
 import play.api.libs.concurrent.AkkaGuiceSupport
 
 import javax.inject.Inject
@@ -21,7 +20,6 @@ import scala.reflect.io.File
 
 
   override def configure(): Unit = {
-    bindActor[UserCountActor]("userCountActor")
     bind(classOf[ActorInit]).asEagerSingleton()
 
     }

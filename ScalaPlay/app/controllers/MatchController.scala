@@ -1,10 +1,10 @@
 package controllers
 
-import Dao.{MatchDataDao, UserDao}
+import Dao.MatchDataDao
 import akka.actor.ActorRef
 import akka.stream.Materializer
 import akka.util.Timeout
-import models.UserData
+
 import play.api.libs.json.Json
 import play.api.mvc.{Action, AnyContent, BaseController, ControllerComponents}
 
@@ -14,8 +14,7 @@ import scala.concurrent.duration.DurationInt
 import scala.language.postfixOps
 
 class MatchController @Inject()(val matchDataDao: MatchDataDao,
-                                val controllerComponents: ControllerComponents,
-                                @Named("userCountActor") userCountActor: ActorRef)
+                                val controllerComponents: ControllerComponents)
                                (implicit mat: Materializer, ec: ExecutionContext)
   extends BaseController {
 

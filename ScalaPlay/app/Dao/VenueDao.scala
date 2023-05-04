@@ -1,6 +1,6 @@
 package Dao
 
-import models.{UserData, Venues}
+import models.{ Venues}
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
 import play.api.mvc.{AbstractController, ControllerComponents}
 import slick.jdbc.JdbcProfile

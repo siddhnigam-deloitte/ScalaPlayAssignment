@@ -1,6 +1,6 @@
 package modules.actor
 
-import Dao.{MatchDataDao, TeamsDao, UserDao, VenueDao}
+import Dao.{MatchDataDao, TeamsDao, VenueDao}
 import akka.actor.Actor
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.{Sink, Source}
