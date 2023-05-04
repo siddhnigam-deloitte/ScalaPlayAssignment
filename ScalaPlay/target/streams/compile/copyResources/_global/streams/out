@@ -1,5 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/svinayakamnigam/ScalaPlayassignment/conf/logback.xml,/home/svinayakamnigam/ScalaPlayassignment/target/scala-2.13/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/svinayakamnigam/ScalaPlayassignment/conf/messages,/home/svinayakamnigam/ScalaPlayassignment/target/scala-2.13/classes/messages)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/svinayakamnigam/ScalaPlayassignment/conf/application.conf,/home/svinayakamnigam/ScalaPlayassignment/target/scala-2.13/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/svinayakamnigam/ScalaPlayassignment/conf/routes,/home/svinayakamnigam/ScalaPlayassignment/target/scala-2.13/classes/routes)[0m
