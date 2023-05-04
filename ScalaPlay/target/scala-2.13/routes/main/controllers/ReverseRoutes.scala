@@ -10,58 +10,19 @@ import _root_.controllers.Assets.Asset
 package controllers {
 
   // @LINE:9
-  class ReverseHomeController(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:12
-    def updateUser(): Call = {
-      
-      Call("PUT", _prefix + { _defaultPrefix } + "update")
-    }
-  
-    // @LINE:10
-    def getUser(userId:Int): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "user/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("userId", userId)))
-    }
-  
-    // @LINE:9
-    def addUser(): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "addUser")
-    }
-  
-    // @LINE:13
-    def countUsers(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "countUsers")
-    }
-  
-    // @LINE:11
-    def getAllUsers(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "users")
-    }
-  
-  }
-
-  // @LINE:15
   class ReverseMatchController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:15
+    // @LINE:9
     def getAllmatches(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "getAllMatches")
     }
   
-    // @LINE:16
+    // @LINE:10
     def getmatch(matchid:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "Match/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("matchid", matchid)))
@@ -69,20 +30,20 @@ package controllers {
   
   }
 
-  // @LINE:18
+  // @LINE:12
   class ReverseTimesWinController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:18
+    // @LINE:12
     def getwin(team:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "win/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("team", team)))
     }
   
-    // @LINE:19
+    // @LINE:13
     def getAllWins(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "getallwins")
@@ -90,14 +51,14 @@ package controllers {
   
   }
 
-  // @LINE:22
+  // @LINE:16
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:22
+    // @LINE:16
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

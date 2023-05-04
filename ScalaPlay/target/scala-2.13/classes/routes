@@ -6,12 +6,6 @@
 # An example controller showing a sample home page
 
 
-POST    /addUser                    controllers.HomeController.addUser()
-GET     /user/:userId               controllers.HomeController.getUser(userId: Int)
-GET     /users                      controllers.HomeController.getAllUsers()
-PUT     /update                     controllers.HomeController.updateUser()
-GET     /countUsers                 controllers.HomeController.countUsers()
-
 GET     /getAllMatches              controllers.MatchController.getAllmatches()
 GET     /Match/:matchid             controllers.MatchController.getmatch(matchid:Int)
 

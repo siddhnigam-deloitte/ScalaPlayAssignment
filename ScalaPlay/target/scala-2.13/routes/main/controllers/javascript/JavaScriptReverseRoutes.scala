@@ -10,66 +10,6 @@ import _root_.controllers.Assets.Asset
 package controllers.javascript {
 
   // @LINE:9
-  class ReverseHomeController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:12
-    def updateUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.updateUser",
-      """
-        function() {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "update"})
-        }
-      """
-    )
-  
-    // @LINE:10
-    def getUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.getUser",
-      """
-        function(userId0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("userId", userId0))})
-        }
-      """
-    )
-  
-    // @LINE:9
-    def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.addUser",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addUser"})
-        }
-      """
-    )
-  
-    // @LINE:13
-    def countUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.countUsers",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "countUsers"})
-        }
-      """
-    )
-  
-    // @LINE:11
-    def getAllUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.getAllUsers",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:15
   class ReverseMatchController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -77,7 +17,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
+    // @LINE:9
     def getAllmatches: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MatchController.getAllmatches",
       """
@@ -87,7 +27,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:10
     def getmatch: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MatchController.getmatch",
       """
@@ -99,7 +39,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:18
+  // @LINE:12
   class ReverseTimesWinController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -107,7 +47,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
+    // @LINE:12
     def getwin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TimesWinController.getwin",
       """
@@ -117,7 +57,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:13
     def getAllWins: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TimesWinController.getAllWins",
       """
@@ -129,7 +69,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:16
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -137,7 +77,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:16
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
