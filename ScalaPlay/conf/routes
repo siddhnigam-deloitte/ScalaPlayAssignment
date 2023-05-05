@@ -8,6 +8,7 @@
 
 GET     /getAllMatches              controllers.MatchController.getAllmatches()
 GET     /Match/:matchid             controllers.MatchController.getmatch(matchid:Int)
+GET     /Matches/:team           controllers.MatchController.getmatchesbyteam(team:String)
 
 GET     /win/:team              controllers.TimesWinController.getwin(team:String)
 GET     /getallwins             controllers.TimesWinController.getAllWins()
