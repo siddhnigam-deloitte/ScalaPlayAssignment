@@ -14,9 +14,9 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:9
   MatchController_0: controllers.MatchController,
-  // @LINE:12
+  // @LINE:13
   TimesWinController_1: controllers.TimesWinController,
-  // @LINE:16
+  // @LINE:17
   Assets_2: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -25,9 +25,9 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:9
     MatchController_0: controllers.MatchController,
-    // @LINE:12
+    // @LINE:13
     TimesWinController_1: controllers.TimesWinController,
-    // @LINE:16
+    // @LINE:17
     Assets_2: controllers.Assets
   ) = this(errorHandler, MatchController_0, TimesWinController_1, Assets_2, "/")
 
@@ -44,6 +44,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getAllMatches""", """controllers.MatchController.getAllmatches()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """Match/""" + "$" + """matchid<[^/]+>""", """controllers.MatchController.getmatch(matchid:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """Matches/""" + "$" + """team<[^/]+>""", """controllers.MatchController.getmatchesbyteam(team:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """win/""" + "$" + """team<[^/]+>""", """controllers.TimesWinController.getwin(team:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getallwins""", """controllers.TimesWinController.getAllWins()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
@@ -90,11 +91,29 @@ class Routes(
     )
   )
 
-  // @LINE:12
-  private[this] lazy val controllers_TimesWinController_getwin2_route = Route("GET",
+  // @LINE:11
+  private[this] lazy val controllers_MatchController_getmatchesbyteam2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("Matches/"), DynamicPart("team", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_MatchController_getmatchesbyteam2_invoker = createInvoker(
+    MatchController_0.getmatchesbyteam(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MatchController",
+      "getmatchesbyteam",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """Matches/""" + "$" + """team<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:13
+  private[this] lazy val controllers_TimesWinController_getwin3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("win/"), DynamicPart("team", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TimesWinController_getwin2_invoker = createInvoker(
+  private[this] lazy val controllers_TimesWinController_getwin3_invoker = createInvoker(
     TimesWinController_1.getwin(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -108,11 +127,11 @@ class Routes(
     )
   )
 
-  // @LINE:13
-  private[this] lazy val controllers_TimesWinController_getAllWins3_route = Route("GET",
+  // @LINE:14
+  private[this] lazy val controllers_TimesWinController_getAllWins4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("getallwins")))
   )
-  private[this] lazy val controllers_TimesWinController_getAllWins3_invoker = createInvoker(
+  private[this] lazy val controllers_TimesWinController_getAllWins4_invoker = createInvoker(
     TimesWinController_1.getAllWins(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -126,11 +145,11 @@ class Routes(
     )
   )
 
-  // @LINE:16
-  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
+  // @LINE:17
+  private[this] lazy val controllers_Assets_versioned5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned5_invoker = createInvoker(
     Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -159,22 +178,28 @@ class Routes(
         controllers_MatchController_getmatch1_invoker.call(MatchController_0.getmatch(matchid))
       }
   
-    // @LINE:12
-    case controllers_TimesWinController_getwin2_route(params@_) =>
+    // @LINE:11
+    case controllers_MatchController_getmatchesbyteam2_route(params@_) =>
       call(params.fromPath[String]("team", None)) { (team) =>
-        controllers_TimesWinController_getwin2_invoker.call(TimesWinController_1.getwin(team))
+        controllers_MatchController_getmatchesbyteam2_invoker.call(MatchController_0.getmatchesbyteam(team))
       }
   
     // @LINE:13
-    case controllers_TimesWinController_getAllWins3_route(params@_) =>
-      call { 
-        controllers_TimesWinController_getAllWins3_invoker.call(TimesWinController_1.getAllWins())
+    case controllers_TimesWinController_getwin3_route(params@_) =>
+      call(params.fromPath[String]("team", None)) { (team) =>
+        controllers_TimesWinController_getwin3_invoker.call(TimesWinController_1.getwin(team))
       }
   
-    // @LINE:16
-    case controllers_Assets_versioned4_route(params@_) =>
+    // @LINE:14
+    case controllers_TimesWinController_getAllWins4_route(params@_) =>
+      call { 
+        controllers_TimesWinController_getAllWins4_invoker.call(TimesWinController_1.getAllWins())
+      }
+  
+    // @LINE:17
+    case controllers_Assets_versioned5_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned4_invoker.call(Assets_2.versioned(path, file))
+        controllers_Assets_versioned5_invoker.call(Assets_2.versioned(path, file))
       }
   }
 }

@@ -37,9 +37,19 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:11
+    def getmatchesbyteam: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MatchController.getmatchesbyteam",
+      """
+        function(team0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Matches/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("team", team0))})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:12
+  // @LINE:13
   class ReverseTimesWinController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -47,7 +57,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
+    // @LINE:13
     def getwin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TimesWinController.getwin",
       """
@@ -57,7 +67,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:13
+    // @LINE:14
     def getAllWins: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TimesWinController.getAllWins",
       """
@@ -69,7 +79,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:16
+  // @LINE:17
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -77,7 +87,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:16
+    // @LINE:17
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
